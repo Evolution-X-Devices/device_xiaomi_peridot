@@ -8,6 +8,8 @@ binder_use(parts_app)
 allow parts_app {
   activity_service
   activity_task_service
+  audio_service
+  autofill_service
   app_api_service
   batterystats_service
   cameraserver_service
@@ -17,15 +19,19 @@ allow parts_app {
   game_service
   gpu_service
   hint_service
+  launcherapps_service
   media_session_service
   mediaextractor_service
   mediametrics_service
   mediaserver_service
   netstats_service
+  role_service
+  sensitive_content_protection_service
   permission_checker_service
   sensorservice_service
   statusbar_service
   thermal_service
+  voiceinteraction_service
 }:service_manager find;
 
 binder_call(parts_app, gpuservice)
@@ -37,3 +43,7 @@ allow parts_app system_app_data_file:lnk_file create_file_perms;
 # Displayfeature
 allow parts_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
 binder_call(parts_app, vendor_hal_displayfeature_xiaomi_default)
+
+# Thermal
+allow parts_app sysfs_thermal:dir r_dir_perms;
+allow parts_app sysfs_thermal:file rw_file_perms;
