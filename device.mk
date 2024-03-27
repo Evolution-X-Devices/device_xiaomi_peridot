@@ -276,6 +276,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlayPeridot \
     FrameworkOverlayPeridot \
     LineageSDKOverlayPeridot \
+    LineageSettingsOverlayPeridot \
     NfcOverlayPeridot \
     SecureElementOverlayPeridot \
     SettingsOverlayPeridot \
