@@ -361,6 +361,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ApertureOverlayPeridot \
     CarrierConfigOverlayPeridot \
+    DeviceAsWebcamResTarget \
     FrameworkOverlayPeridot \
     LineageSDKOverlayPeridot \
     LineageSettingsOverlayPeridot \
