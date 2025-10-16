@@ -45,14 +45,14 @@
 
 	<service
             android:name=".thermal.ThermalService"
-            android:exported="true"
             android:permission="ThermalService">
 	</service>
 
         <activity
-            android:name=".thermal.ThermalActivity"
-            android:exported="false"
-            android:label="@string/thermal_title">
+            android:name=".thermal.ThermalSettingsActivity"
+            android:label="@string/thermal_title"
+            android:theme="@style/Theme.SubSettingsBase.Thermal"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
