@@ -28,7 +28,18 @@ else
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 PRODUCT_RO_FILE_SYSTEM := erofs
-PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.virtual_ab.compression.threads=true \
+    ro.virtual_ab.cow_op_merge_size=16 \
+    ro.virtual_ab.merge_thread_priority=19 \
+    ro.virtual_ab.num_merge_threads=1 \
+    ro.virtual_ab.num_verify_threads=1 \
+    ro.virtual_ab.num_worker_threads=3 \
+    ro.virtual_ab.o_direct.enabled=true \
+    ro.virtual_ab.read_ahead_size=16 \
+    ro.virtual_ab.verify_block_size=1048576 \
+    ro.virtual_ab.verify_threshold_size=1073741824 \
+    ro.virtual_ab.worker_thread_priority=0
 endif
 
 AB_OTA_POSTINSTALL_CONFIG += \
