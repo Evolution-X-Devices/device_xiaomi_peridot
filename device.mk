@@ -177,10 +177,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-# DSP
-PRODUCT_PACKAGES += \
-    DSPVolumeSynchronizer
-
 # Debloat
 PRODUCT_PACKAGES += \
     RemovePackagesPeridot
