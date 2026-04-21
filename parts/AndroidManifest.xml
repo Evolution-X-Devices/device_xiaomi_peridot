@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 Paranoid Android
+     Copyright (C) 2023-2024 Paranoid Android
 
      SPDX-License-Identifier: Apache-2.0
 -->
@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -40,13 +42,15 @@
 
         <service
             android:name=".display.ColorModeService"
-            android:permission="ColorModeService">
-        </service>
+            android:permission="ColorModeService" />
 
-	<service
+        <service
             android:name=".thermal.ThermalService"
-            android:permission="ThermalService">
-	</service>
+            android:permission="ThermalService" />
+
+        <service
+            android:name=".fps.FpsService"
+            android:exported="false" />
 
         <activity
             android:name=".thermal.ThermalSettingsActivity"
@@ -66,5 +70,19 @@
                 android:name="com.android.settings.order"
                 android:value="1" />
         </activity>
+
+        <activity
+            android:name=".fps.FpsSettingsActivity"
+            android:label="@string/fps_title"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+        </activity>
+
     </application>
 </manifest>

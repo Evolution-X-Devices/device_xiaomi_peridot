@@ -35,4 +35,9 @@
     <string name="thermal_video">Video</string>
     <string name="thermal_reset">Reset to defaults</string>
     <string name="thermal_reset_message">Are you sure you want to reset thermal profile for all apps?</string>
+
+    <!-- FPS info -->
+    <string name="fps_title">FPS info</string>
+    <string name="fps_summary">Display hardware refresh rate overlay for selected apps</string>
+    <string name="fps_master_switch_title">Use FPS meter</string>
 </resources>
