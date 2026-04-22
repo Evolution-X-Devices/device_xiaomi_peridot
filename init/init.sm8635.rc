@@ -1,3 +1,7 @@
+on boot
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0660 /sys/class/drm/sde-crtc-0/measured_fps
+
 on init
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
