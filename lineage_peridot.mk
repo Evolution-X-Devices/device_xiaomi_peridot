@@ -23,5 +23,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Flags
 EVO_BUILD_TYPE := Official
+TARGET_ENABLE_BLUR := false
 TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_HAS_UDFPS := true
